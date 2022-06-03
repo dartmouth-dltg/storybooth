@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  word-wrap: break-word;
+  background-color: $bg;
+  font-family: $sansserif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+a:link {
+  text-decoration: none;
+  color: $link;
+}
+
+a:visited {
+  color: $link;
+}
+
+a:active,
+a:hover {
+  color: $blue;
+}
+
+h1 {
+  font-size: 1.75 * $base-font-size;
+  line-height: 1.75 * $base-line-height;
+}
+
+h2 {
+  font-size: 1.25 * $base-font-size;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 1.15 * $base-font-size;
+  line-height: 1.15 * $base-line-height;
+}
+
+h4 {
+  font-size: 1.125 * $base-font-size;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// @group ----- Navigation -----
+
+#skipnav {
+  position: fixed;
+  z-index: -5;
+  top: $spacing-l;
+  left: 50%;
+  padding: $spacing-s;
+  transform: translateX(-50%);
+  opacity: 0;
+  border: 1px solid $gray;
+  background-color: #fff;
+
+  &:focus {
+    z-index: 1000;
+    opacity: 1;
+  }
+}
+
+// @end
+
+// @group ----- Page Wrapper
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+// @group ----- Header -----
+
+.site-title h1 {
+  margin: 0;
+  padding-right: $base-line-height;
+  font-size: 1.25 * $base-font-size;
+  line-height: normal;
+}
+
+header {
+  position: relative;
+  margin: 0 0 2 * $spacing-l 0;
+  padding: 0 5%;
+  border-bottom: 1px solid $light;
+  background-color: $dartgreen;
+
+  > * {
+    @include container;
+
+    display: block;
+    padding: 0;
+  }
+}
+
+.site-title:hover,
+.site-title:active {
+  border-bottom: 0;
+}
+
+header h1 {
+  width: 90%;
+  margin: 0 0 $spacing-s 0;
+  padding: 0.8rem 0;
+  line-height: 2.1rem;
+  a,
+  a:active,
+  a:hover,
+  a:focus,
+  a:link,
+  a:visited {
+    color: $white;
+  }
+  img {
+    float: left;
+    max-height: 2.5rem;
+    padding-right: 1rem;
+  }
+}
+
+// @end
+
+// @group ----- Footer -----
+
+footer {
+  clear: both;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: $gray-dark;
+  > * {
+    @include container;
+
+    width: 90%;
+  }
+  a,
+  a:active,
+  a:focus,
+  a:hover,
+  a:link,
+  a:visited {
+    color: $white;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+// @end
+
+// @group ----- Page and Blocks -----
+
+#content {
+  @include container;
+
+  width: 90%;
+  padding-bottom: 8rem;
+  color: $gray-dark;
+  font-size: 0.9 * $base-font-size;
+  line-height: normal;
+  .site-promo {
+    clear: both;
+    padding-top: 2rem;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:after,
+    &:before {
+      display: table;
+      content: " ";
+    }
+  }
+  h2 {
+    margin: 0;
+  }
+  .site-image {
+    float: left;
+    max-width: 250px;
+    margin-right: 1.5rem;
+    border: none;
+    figure {
+      margin: 0;
+      img {
+        width: 250px;
+        height: 250px;
+        margin-top: 0.4em;
+        object-fit: cover;
+      }
+      figcaption p {
+        margin: 0.5rem 0;
+        font-size: 0.8 * $base-font-size;
+        font-style: italic;
+        line-height: normal;
+      }
+    }
+  }
+  p {
+    max-width: 1100px;
+  }
+
+  // random items
+  .random-items-button {
+    text-align: center;
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      cursor: pointer;
+      border: 1px solid $light;
+      border-radius: 4px;
+      font-size: 1.2rem;
+    }
+  }
+  .item.resource .random-item {
+    display: flex;
+    .random-item-image,
+    .random-item-description {
+      flex: 0 0 50%;
+      h3 {
+        font-family: "Special Elite", $serif;
+      }
+    }
+    img {
+      max-height: 90vh;
+    }
+  }
+}
+
+// @end
+
+@media (max-width: 767px) {
+  #content {
+    h2 {
+      font-size: 1rem;
+    }
+    .site-image {
+      max-width: 150px;
+      figure img {
+        width: 150px;
+        height: 150px;
+        margin-top: 0.2em;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
