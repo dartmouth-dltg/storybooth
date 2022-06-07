@@ -96,7 +96,7 @@ header {
   margin: 0 0 2 * $spacing-l 0;
   padding: 0 5%;
   border-bottom: 1px solid $light;
-  background-color: $dartgreen;
+  background-color: $gray-dark;
 
   > * {
     @include container;
@@ -114,8 +114,10 @@ header {
 header h1 {
   width: 90%;
   margin: 0 0 $spacing-s 0;
-  padding: 0.8rem 0;
+  padding: 1.4rem 0 0.8rem 0;
+  font-family: "Special Elite", $serif;
   line-height: 2.1rem;
+
   a,
   a:active,
   a:hover,
@@ -127,6 +129,7 @@ header h1 {
   img {
     float: left;
     max-height: 2.5rem;
+    margin-top: -0.25rem;
     padding-right: 1rem;
   }
 }
@@ -212,9 +215,19 @@ footer {
     max-width: 1100px;
   }
 
+  .item-showcase {
+    border: none;
+  }
+
   // random items
   .random-items-button {
+    grid-row: 2;
+    grid-column: 2;
     text-align: center;
+    &.grid-top {
+      grid-row: 1;
+      grid-column: 1 / 2;
+    }
     button {
       width: 100%;
       padding: 0.5rem;
@@ -225,14 +238,25 @@ footer {
     }
   }
   .item.resource .random-item {
-    display: flex;
-    .random-item-image,
-    .random-item-description {
-      flex: 0 0 50%;
-      h3 {
-        font-family: "Special Elite", $serif;
-      }
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 2rem;
+    h3 {
+      grid-row: 1;
+      grid-column: 2;
+      font-family: "Special Elite", $serif;
     }
+    .random-item-image {
+      grid-row: 1 / -1;
+      grid-column: 1;
+    }
+    .random-item-description {
+      grid-row: 2;
+      grid-column: 2;
+    }
+
     img {
       max-height: 90vh;
     }
@@ -252,6 +276,32 @@ footer {
         width: 150px;
         height: 150px;
         margin-top: 0.2em;
+      }
+    }
+  }
+
+  // random items
+  #content {
+    .random-items-button {
+      grid-row: 4;
+      grid-column: 1;
+    }
+    .item.resource .random-item {
+      display: grid;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-columns: 1fr;
+      align-items: start;
+      h3 {
+        grid-row: 1;
+        grid-column: 1;
+      }
+      .random-item-image {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      .random-item-description {
+        grid-row: 3;
+        grid-column: 1;
       }
     }
   }
