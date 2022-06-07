@@ -54,6 +54,10 @@ $userBar = $this->userBar();
                             <?php echo $escape($siteTitle); ?>
                         </a>
                     </h1>
+                    <?php echo $site->publicNav()->menu()->renderMenu(null, [
+                        'maxDepth' => $this->themeSetting('nav_depth') - 1,
+                        'ulClass' => 'menu closed'
+                    ]); ?>
                 </div>
             </header>
             <div id="content" role="main">
