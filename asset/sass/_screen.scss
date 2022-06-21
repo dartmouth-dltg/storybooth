@@ -12,8 +12,8 @@ body {
   min-height: 100vh;
   margin: 0;
   word-wrap: break-word;
-  color: $white;
-  background-color: $gray-medium;
+  color: $black;
+  background-color: $storybooth-bg;
   font-family: $sansserif;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -89,10 +89,9 @@ img {
 
 header {
   position: relative;
-  margin: 0 0 2 * $spacing-l 0;
+  margin: 0 0 0 0;
   padding: 0 5%;
-  border-bottom: 1px solid $light;
-  background-color: $gray-dark;
+  background-color: $storybooth-header-bg;
 
   > * {
     @include container;
@@ -102,7 +101,7 @@ header {
   }
   > div {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto auto;
   }
   a,
   a:link,
@@ -141,6 +140,7 @@ header h1 {
 
 header ul.menu {
   grid-column: 2;
+  justify-self: right;
   list-style: none;
   color: $white;
   li {
@@ -156,7 +156,22 @@ header ul.menu {
         content: "";
       }
     }
+    a {
+      text-decoration: underline dotted $white 1px;
+      text-underline-offset: 2px;
+      &:hover {
+        color: $black;
+        background-color: $white;
+      }
+    }
   }
+}
+
+.header-image {
+  height: 10rem;
+  background-image: url("../img/storyboothTypewriter.jpg");
+  background-position-y: center;
+  background-size: cover;
 }
 
 // @end
@@ -182,12 +197,13 @@ footer {
   a:hover,
   a:link,
   a:visited {
+    text-decoration: underline dotted $white 1px;
+    text-underline-offset: 2px;
     color: $white;
-  }
-
-  a:focus,
-  a:hover {
-    text-decoration: underline;
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
   }
 }
 
@@ -199,8 +215,8 @@ footer {
   @include container;
 
   width: 90%;
-  padding-bottom: 8rem;
-  color: $white;
+  padding-bottom: 4rem;
+  color: $black;
   font-size: 0.9 * $base-font-size;
   line-height: normal;
   .site-promo {
@@ -270,8 +286,11 @@ footer {
     grid-template-rows: auto auto 1fr;
     grid-template-columns: 1fr 1fr;
     align-items: start;
-    column-gap: 2rem;
-    h3 {
+    column-gap: 3rem;
+    h2,
+    h3,
+    h4,
+    h5 {
       grid-row: 1;
       grid-column: 2;
       font-family: "Special Elite", $serif;
@@ -286,7 +305,26 @@ footer {
     }
 
     img {
-      max-height: 90vh;
+      max-height: calc(100vh - 13rem - 80px);
+    }
+  }
+  .site-page-pagination {
+    display: none;
+  }
+  .item-listing {
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    margin: 2rem 0;
+    column-gap: 2rem;
+    .title-area {
+      grid-column: 1;
+      h2 {
+        font-family: "Special Elite", $serif;
+      }
+    }
+    .item {
+      grid-column: 2;
+      padding-top: 2rem;
     }
   }
 }
@@ -319,7 +357,10 @@ footer {
       grid-template-rows: auto 1fr auto auto;
       grid-template-columns: 1fr;
       align-items: start;
-      h3 {
+      h2,
+      h3,
+      h4,
+      h5 {
         grid-row: 1;
         grid-column: 1;
       }
@@ -336,8 +377,15 @@ footer {
 }
 
 @media (max-width: 575px) {
-  header h1 {
-    font-size: 1.5rem;
+  header {
+    > div {
+      h1 {
+        font-size: 1.5rem;
+      }
+      ul.menu {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
@@ -369,6 +417,19 @@ footer {
   }
 }
 
+@media (max-width: 450px) {
+  header {
+    > div {
+      display: block;
+      ul.menu {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
@@ -390,7 +451,7 @@ footer {
     height: 13px;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
     border-radius: 50%;
-    background: $white;
+    background: $black;
 
     &:nth-child(1) {
       left: 8px;

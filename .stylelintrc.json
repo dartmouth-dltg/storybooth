@@ -449,7 +449,7 @@
     "selector-pseudo-element-colon-notation": null,
     "shorthand-property-no-redundant-values": null,
     "string-quotes": "double",
-    "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"],
+    "unit-allowed-list": ["deg", "em", "ex", "fr", "ms", "rem", "%", "s", "px", "vw", "vh"],
     "at-rule-no-unknown": [true, {
 	    "ignoreAtRules": ["each", "else", "extend", "for", "function", "if", "include", "mixin", "return", "use"]
     }],
@@ -469,7 +469,7 @@
     "scss/at-if-no-null": true,
     "scss/at-import-no-partial-leading-underscore": true,
     "scss/at-import-partial-extension": "never",
-    "scss/at-import-partial-extension-blacklist": null, 
+    "scss/at-import-partial-extension-blacklist": null,
     "scss/at-import-partial-extension-whitelist": null,
     "scss/at-mixin-argumentless-call-parentheses": "never",
     "scss/at-mixin-named-arguments": null,
