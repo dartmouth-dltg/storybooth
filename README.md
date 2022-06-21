@@ -22,6 +22,7 @@ Items should have the following metadata values assigned
 - Description
   - A concise description of the item
   - Use dcterms:description
+- Resource Template: `Story Booth` (see below)
   
  Each item should also have two media assets associated with it
  
@@ -32,3 +33,10 @@ Items should have the following metadata values assigned
    - Use dcterms:title to set the title
    - Use dcterms:type set to 'storybooth'
    - media tab:html with formatted transcription of the image text
+   
+To use the RandomItems module
+1. Create a new resource template named `Story Booth`
+1. Suggested class: `Dublin Core Type: Image`
+1. Fields
+  - Title (dcterms:title)
+  - Description (dcterms:description)
