@@ -31,7 +31,7 @@ Items should have the following metadata values assigned
    - alt tag
 - HTML transcription of the image text
    - Use dcterms:title to set the title
-   - Use dcterms:type set to 'storybooth'
+   - Use dcterms:type set to `storybooth`
    - media tab:html with formatted transcription of the image text
    
 To use the RandomItems module

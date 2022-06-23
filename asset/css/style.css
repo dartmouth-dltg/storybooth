@@ -30,7 +30,7 @@
     margin: 0;
     word-wrap: break-word;
     color: #000;
-    background-color: #d2cec3;
+    background-color: #e3dbd3;
     font-family: "National2", verdana, sans-serif;
     font-size: 1.25rem;
     line-height: 1.875rem;
@@ -89,7 +89,7 @@
     position: relative;
     margin: 0 0 0 0;
     padding: 0 5%;
-    background-color: #553026;
+    background-color: #926d5d;
   }
   header > * {
     max-width: 1450px;
@@ -161,7 +161,10 @@ header h1 a:hover {
   }
   .header-image {
     height: 10rem;
-    background-image: url("../img/storyboothTypewriter.jpg");
+    border-top: 4px solid #333;
+    border-bottom: 3px solid #333;
+    background-image: url("../img/storybooth_art_header.png");
+    background-position-x: center;
     background-position-y: center;
     background-size: cover;
   }
@@ -264,9 +267,15 @@ footer a:visited:hover {
     width: 100%;
     padding: 0.5rem;
     cursor: pointer;
+    color: #000;
     border: 1px solid #dedede;
     border-radius: 4px;
+    background-color: #b0c48d;
     font-size: 1.2rem;
+  }
+  #content .random-items-button button:hover {
+    color: #fff;
+    background-color: #66764c;
   }
   #content .item.resource .random-item {
     display: grid;
