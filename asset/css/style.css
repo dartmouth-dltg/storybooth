@@ -301,6 +301,7 @@ footer a:visited:hover {
     grid-column: 2;
   }
   #content .item.resource .random-item img {
+    min-height: 20rem;
     max-height: calc(100vh - 13rem - 80px);
   }
   #content .site-page-pagination {

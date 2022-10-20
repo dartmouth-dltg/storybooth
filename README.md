@@ -5,6 +5,14 @@ Omeka-S theme for Dartmouth College Library's Story Booth project
 
 Add this to your standard themes directory in Omeka-S
 
+Clone the repository as usual
+
+For production use, run `npm install --omit-dev`.
+
+For development use, run `npm install` and then `make linters`. 
+The make file will also clean the linter symlinks using
+`make clean`.
+
 ## Special Instructions for Items
 
 This theme is specific to the Story Booth project and adds a basic grid system and 

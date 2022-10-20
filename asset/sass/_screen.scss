@@ -314,6 +314,7 @@ footer {
     }
 
     img {
+      min-height: 20rem;
       max-height: calc(100vh - 13rem - 80px);
     }
   }
