@@ -295,6 +295,8 @@ footer a:visited:hover {
   #content .item.resource .random-item .random-item-image {
     grid-row: 1/-1;
     grid-column: 1;
+    align-self: center;
+    justify-self: center;
   }
   #content .item.resource .random-item .random-item-description {
     grid-row: 2;

@@ -307,6 +307,8 @@ footer {
     .random-item-image {
       grid-row: 1 / -1;
       grid-column: 1;
+      align-self: center;
+      justify-self: center;
     }
     .random-item-description {
       grid-row: 2;
