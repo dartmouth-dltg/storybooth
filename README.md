@@ -1,6 +1,9 @@
 # Story Booth
 Omeka-S theme for Dartmouth College Library's Story Booth project
 
+## Note
+This theme works with Omeka-S up to v4.1.1. Now unmaintained.
+
 ## Installation
 
 Add this to your standard themes directory in Omeka-S
